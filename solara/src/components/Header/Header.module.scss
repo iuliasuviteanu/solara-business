@@ -1,0 +1,54 @@
+.header {
+  background-color: transparent;
+
+  border-bottom: 1px solid #546d6d;
+
+  .navIcons {
+    background-color: #192A35;
+    display: flex;
+    border-radius: 3px;
+
+    div {
+      display: flex;
+      padding: 3px 5px;
+    }
+
+    path {
+      color: #8C949A;
+    }
+  }
+
+  &__logo {
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    span {
+      display: block;
+      margin-left: 7px;
+    }
+  }
+
+  &__container {
+    max-width: 100%;
+    ;
+  }
+
+  .user {
+    p {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-right: 10px;
+      font-weight: 300;
+    }
+
+    &__avatar {
+      border-radius: 5px;
+      border: 1px solid #61FFFF;
+
+      span {
+        background: linear-gradient(to right, #071113, #132532);
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.portfolio {
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+
+
+    .kwhDetails {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__icon {
+        padding: 2px;
+        margin-bottom: 10px;
+        display: flex;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          background-color: #61FFFF;
+          border-radius: 5px;
+
+          path {
+            color: darkslategray;
+          }
+        }
+
+        p {
+          margin-left: 10px;
+          color: #7F8082;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.park__section {
+  width: 100%;
+  margin-top: 50px;
+
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 25px;
+    }
+
+
+    span {
+      border-bottom: 1px solid #546d6d;
+      height: 1px;
+      width: 85%;
+      display: inline-block;
+    }
+  }
+
+  &__table {
+    margin-top: 20px;
+    border: 1px solid #43A463;
+    padding: 15px;
+
+
+    &__row {
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        p {
+          color: gray;
+        }
+      }
+
+      &__desc {
+        margin-top: 15px;
+        padding: 15px 0 30px 0;
+        border-bottom: 1px solid #546d6d;
+
+
+        p {
+          color: white;
+          text-transform: none;
+          letter-spacing: normal;
+        }
+      }
+
+      &__parkName {
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      &__kwhDuration {
+        font-weight: 100;
+      }
+
+      &__yearlyYield {
+        font-weight: 400;
+        color: #43A463 !important;
+      }
+
+      &__kwhAvailable {
+        color: aqua !important;
+        font-weight: 300;
+      }
+
+      &__buyNow {
+        color: gray !important;
+        padding: 5px 30px;
+        background-color: transparent;
+        outline-color: none;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .seeAll {
+
+
+    a {
+      color: gray;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.park__box {
+
+  .park__section__table__row__desc {
+
+    &:last-child {
+      border: none;
+    }
+  }
+}

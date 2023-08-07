@@ -1,0 +1,42 @@
+.login {
+  background: rgb(2, 0, 36);
+  /* For browsers that do not support gradients */
+  // background-image: linear-gradient(to right, #121518, #1B2530);
+  background-image: linear-gradient(90deg, #071113, 0%, #182B39, 100%);
+  height: 100vh;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  &__container {
+    padding: 0;
+    border-radius: 5px;
+    padding: 50px 20px !important;
+    background-image: linear-gradient(to right, #3a4c5d, #52a068)
+  }
+
+  &__button {
+    background-color: #55a286;
+    padding: 15px 0;
+
+    &:hover {
+      background-color: #062c1e;
+      ;
+    }
+  }
+
+  &__input {
+    border-color: var(--white);
+    padding: 10px;
+
+    input {
+      border: 1px solid white;
+      border-radius: 5px;
+      ;
+    }
+  }
+}
