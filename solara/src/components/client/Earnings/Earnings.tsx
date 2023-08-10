@@ -1,3 +1,4 @@
+import SimpleAreaChart from "../SimpleAreaChart";
 import styles from "./Earnings.module.scss";
 import Image from "next/image";
 
@@ -23,8 +24,9 @@ const Earnings = () => {
                 src="/images/solara-graphics.png"
                 width={300}
                 height={170}
-                alt="Picture of the author"
+                alt="Graphic Picture"
               />
+              {/* <SimpleAreaChart /> */}
             </div>
           </div>
         </main>

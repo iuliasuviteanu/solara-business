@@ -2,20 +2,9 @@ import styles from "./Park.module.scss";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 interface ParkProps {
   title: string;
-  parkName?: string;
-  kwhDuration?: string;
-  yearlyYield?: string;
-  kwhAvailable?: string;
   children: any;
 }
-const ParkComponent = ({
-  title,
-  parkName,
-  children,
-  kwhDuration,
-  yearlyYield,
-  kwhAvailable,
-}: ParkProps) => {
+const ParkComponent = ({ title, children }: ParkProps) => {
   return (
     <div className={styles.park__section}>
       <div className={styles.park__section__heading}>

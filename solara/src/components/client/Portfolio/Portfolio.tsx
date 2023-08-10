@@ -1,4 +1,6 @@
 import BoltIcon from "@mui/icons-material/Bolt";
+import InsightsIcon from "@mui/icons-material/Insights";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import styles from "./Portfolio.module.scss";
 
 const Portfolio = () => {
@@ -17,7 +19,7 @@ const Portfolio = () => {
           </div>
           <div className={styles.kwhDetails}>
             <div className={styles.kwhDetails__icon}>
-              <BoltIcon></BoltIcon>
+              <InsightsIcon />
               <p>kWh average yield</p>
             </div>
 
@@ -25,7 +27,7 @@ const Portfolio = () => {
           </div>
           <div className={styles.kwhDetails}>
             <div className={styles.kwhDetails__icon}>
-              <BoltIcon></BoltIcon>
+              <AttachMoneyIcon />
               <p>kWh traded</p>
             </div>
             <p>57</p>

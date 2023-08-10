@@ -13,7 +13,7 @@ const SignIn = () => {
     // Handle sign-in logic here based on the credentials.
     if (username === "client" && password === "client") {
       console.log("Client Sign In Successful");
-      router.push("/dashboard-client");
+      router.push("/client/dashboard");
     } else if (username === "park" && password === "park") {
       console.log("Park Sign In Successful");
       router.push("/dashboard-park");

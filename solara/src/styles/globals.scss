@@ -9,14 +9,15 @@ body,
   color: var(--white);
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
-
+  text-decoration: none;
 }
 
 body {
   background: rgb(2, 0, 36);
   /* For browsers that do not support gradients */
   background: linear-gradient(to right, #071113, #182B39);
-  color: white !important
+  color: white !important;
+  min-height: 100vh;
 }
 
 .clientOverview {
@@ -41,8 +42,17 @@ body {
   padding: 0 50px;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list {
-  background: linear-gradient(to right, #071113, #132532);
+div:first-child {
+
+  form {
+    label {
+      color: white !important;
+    }
+
+    input {
+      color: white !important;
+    }
+  }
 
   li {
     p {
@@ -60,5 +70,46 @@ body {
 
   path {
     color: gray;
+  }
+}
+
+.graphic {
+  width: 100%;
+
+  .recharts-wrapper {
+    width: 100% !important;
+
+    svg {
+      width: 100% !important;
+    }
+  }
+
+
+}
+
+.recharts-cartesian-grid {
+
+
+  .recharts-cartesian-grid-horizontal {
+
+    line:last-child {
+      display: none;
+    }
+
+    line:nth-of-type(6) {
+      display: none;
+    }
+  }
+
+  .recharts-cartesian-grid-vertical {
+    line {
+      display: none;
+    }
+  }
+}
+
+.recharts-yAxis {
+  .recharts-cartesian-axis-line {
+    display: none;
   }
 }
