@@ -3,6 +3,7 @@ import styles from "./Park.module.scss";
 import { useEffect, useState } from "react";
 import ParkDetailsPage from "@/pages/client/park-details";
 import { useParkContext } from "@/context/ParkContext";
+import SellNow from "../SellKws/SellNow";
 
 export interface ParkInterface {
   parkName?: string;
@@ -14,6 +15,8 @@ export interface ParkInterface {
   pricePerKwh?: string;
   priceTotal?: string;
   monthlyYield?: string;
+  buyNow?: string;
+  sellNow?: string;
 }
 const ParkBox = ({
   parkName,
@@ -25,12 +28,21 @@ const ParkBox = ({
   pricePerKwh,
   priceTotal,
   monthlyYield,
+  buyNow,
+  sellNow,
 }: ParkInterface) => {
-  const { parkDetails, setParkDetails, isParkDetailed, setIsParkDetailed } =
-    useParkContext();
+  const {
+    parkDetails,
+    setParkDetails,
+    isParkDetailed,
+    setIsParkDetailed,
+    isOpen,
+    setIsOpen,
+  } = useParkContext();
   const router = useRouter();
+  const [showDialog, setShowDialog] = useState(false);
 
-  const handleOnClick = () => {
+  const handleBuyNowOnClick = () => {
     router.push("/client/park-details");
     setParkDetails({
       parkName: parkName || "",
@@ -39,6 +51,12 @@ const ParkBox = ({
       yearlyYield: yearlyYield || "",
     });
     setIsParkDetailed(!isParkDetailed);
+  };
+
+  const handleSellNowOnClick = () => {
+    setShowDialog(true);
+    setIsOpen(true);
+    console.log("isope", isOpen);
   };
 
   const dashboardParkDetails = (
@@ -53,12 +71,22 @@ const ParkBox = ({
       <p className={styles.park__section__table__row__kwhAvailable}>
         {kwhAvailable}
       </p>
-      <button
-        onClick={handleOnClick}
-        className={styles.park__section__table__row__buyNow}
-      >
-        BUY NOW
-      </button>
+      {buyNow ? (
+        <button
+          onClick={handleBuyNowOnClick}
+          className={styles.park__section__table__row__buyNow}
+        >
+          {buyNow}
+        </button>
+      ) : (
+        <button
+          onClick={handleSellNowOnClick}
+          className={styles.park__section__table__row__buyNow}
+        >
+          {sellNow}
+        </button>
+      )}
+      {showDialog ? <SellNow /> : null}
     </>
   );
 
@@ -78,7 +106,7 @@ const ParkBox = ({
         {monthlyYield}
       </p>
       <button
-        onClick={handleOnClick}
+        onClick={handleBuyNowOnClick}
         className={styles.park__section__table__row__buyNow}
       >
         BUY NOW

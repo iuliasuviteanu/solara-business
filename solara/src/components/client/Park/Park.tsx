@@ -3,8 +3,9 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 interface ParkProps {
   title: string;
   children: any;
+  isSelling?: boolean;
 }
-const ParkComponent = ({ title, children }: ParkProps) => {
+const ParkComponent = ({ title, children, isSelling }: ParkProps) => {
   return (
     <div className={styles.park__section}>
       <div className={styles.park__section__heading}>
@@ -18,7 +19,7 @@ const ParkComponent = ({ title, children }: ParkProps) => {
             <p>kwh duration</p>
             <p>yearly yield</p>
             <p>kwh available</p>
-            <p>purchase kwh</p>
+            {!isSelling ? <p>purchase kwh</p> : <p>sell kwh</p>}
           </div>
         </div>
         <div className={styles.park__box}>{children}</div>

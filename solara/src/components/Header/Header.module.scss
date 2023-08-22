@@ -11,6 +11,13 @@
     div {
       display: flex;
       padding: 3px 5px;
+
+      &:hover {
+        path {
+          color: white;
+          cursor: pointer;
+        }
+      }
     }
 
     path {
@@ -35,20 +42,29 @@
   }
 
   .user {
+
+    &__icon {
+      ul {
+        background-color: red;
+      }
+    }
+
     p {
       text-transform: uppercase;
       font-size: 12px;
       margin-right: 10px;
+      color: white;
       font-weight: 300;
     }
 
     &__avatar {
       border-radius: 5px;
-      border: 1px solid #61FFFF;
+      border: 1px solid aqua;
 
       span {
         background: linear-gradient(to right, #071113, #132532);
       }
+
     }
   }
 }

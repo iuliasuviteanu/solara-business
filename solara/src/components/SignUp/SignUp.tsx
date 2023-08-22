@@ -1,7 +1,7 @@
 import { Button, Container, Paper, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import styles from "./SignIn.module.scss";
+import styles from "../SignIn/SignIn.module.scss";
 import Link from "next/link";
 
 const SignIn = () => {
@@ -65,6 +65,21 @@ const SignIn = () => {
                   "& fieldset": { border: "none" },
                 }}
               />
+              <TextField
+                className={styles.login__input}
+                label="Confirm Password"
+                type="password"
+                fullWidth
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                margin="normal"
+                variant="outlined"
+                sx={{
+                  border: "none",
+                  "& fieldset": { border: "none" },
+                }}
+              />
               <Button
                 type="submit"
                 variant="contained"
@@ -72,11 +87,11 @@ const SignIn = () => {
                 fullWidth
                 className={styles.login__button}
               >
-                Sign In
+                Sign Up
               </Button>
             </form>
             <Typography className={styles.login__signup}>
-              Not a member? <Link href="/sign-up">Sign up here</Link>
+              Already a member? <Link href="/login">Sign in here</Link>
             </Typography>
           </Paper>
         </Container>

@@ -1,7 +1,9 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import InsightsIcon from "@mui/icons-material/Insights";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import SellIcon from "@mui/icons-material/Sell";
 import styles from "./Portfolio.module.scss";
+import Link from "next/link";
 
 const Portfolio = () => {
   return (
@@ -31,6 +33,17 @@ const Portfolio = () => {
               <p>kWh traded</p>
             </div>
             <p>57</p>
+          </div>
+          <div className={styles.kwhDetails}>
+            <div className={styles.kwhDetails__icon}>
+              <SellIcon />
+              <p>kWh for sale</p>
+            </div>
+            <button>
+              <Link className={styles.kwhDetails__sell} href={"/client/sell"}>
+                SELL NOW
+              </Link>
+            </button>
           </div>
         </main>
       </div>

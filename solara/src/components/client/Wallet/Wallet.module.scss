@@ -1,0 +1,95 @@
+.wallet {
+  h1 {
+    border-bottom: 1px solid aqua;
+    display: inline;
+  }
+}
+
+.balance {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  border: 2px solid white;
+  border-radius: 40px;
+  max-width: 600px;
+  align-self: center;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  &__left {
+
+    h2 {
+      margin-top: 20px;
+      color: white;
+      padding: 50px 30px;
+      border-radius: 50%;
+      border: 10px solid #868686;
+      box-shadow: 0 0 30px #3cb765;
+    }
+  }
+
+  &__right {
+    &__box {
+      &:last-child {
+        p {
+          color: red;
+          border: 1px solid red;
+
+          span {
+            border: 1px solid red;
+
+          }
+
+          svg {
+
+            path {
+              color: red;
+            }
+          }
+        }
+      }
+
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 15px;
+
+        span {
+          color: lightgrey;
+        }
+      }
+
+      h2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      p {
+        color: #00c700;
+        padding: 5px 5px 5px 0;
+        border: 1px solid #00c700;
+        border-radius: 50px;
+
+        span {
+          padding: 4px;
+          border: 1px solid #00c700;
+          border-radius: 50%;
+          padding-left: 6px;
+          padding-right: 6px;
+          margin-right: 15px;
+        }
+
+        svg {
+          width: 15px;
+          height: 15px;
+
+          path {
+            color: #00c700;
+          }
+        }
+      }
+    }
+  }
+
+}

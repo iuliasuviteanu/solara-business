@@ -15,6 +15,28 @@
       flex-direction: row;
       justify-content: space-between;
 
+      button {
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding: 5px 30px;
+        background: linear-gradient(to right, #071113, #132532);
+        color: grey !important;
+
+        &:hover {
+          color: white;
+          border-color: white;
+        }
+
+      }
+
+      &__sell {
+        color: gray;
+
+        &:hover {
+          color: white;
+        }
+      }
+
       &__icon {
         padding: 2px;
         margin-bottom: 10px;
@@ -35,6 +57,8 @@
           margin-left: 10px;
           color: #7F8082;
         }
+
+
 
       }
     }

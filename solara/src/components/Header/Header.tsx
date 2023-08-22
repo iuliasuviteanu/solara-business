@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
 import styles from "./Header.module.scss";
@@ -15,12 +14,16 @@ import PersonIcon from "@mui/icons-material/Person";
 import WalletIcon from "@mui/icons-material/Wallet";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+
+  const router = useRouter();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -35,6 +38,14 @@ const Header = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleOnClickWallet = () => {
+    router.push("/client/wallet");
+  };
+
+  const handleOnClickDashboard = () => {
+    router.push("/client/dashboard");
   };
 
   return (
@@ -126,13 +137,13 @@ const Header = () => {
               }}
             >
               <div className={styles.navIcons}>
-                <div>
+                <div onClick={handleOnClickDashboard}>
                   <GridViewIcon></GridViewIcon>
                 </div>
                 <div>
                   <PersonIcon></PersonIcon>
                 </div>
-                <div>
+                <div onClick={handleOnClickWallet}>
                   <WalletIcon></WalletIcon>
                 </div>
                 <div>
@@ -142,16 +153,18 @@ const Header = () => {
             </Box>
 
             <Box sx={{ flexGrow: 0 }} className={styles.user}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <p>John Doe</p>
-                  <Avatar
-                    className={styles.user__avatar}
-                    alt="Remy Sharp"
-                    src="https://i.pravatar.cc/300"
-                  />
-                </IconButton>
-              </Tooltip>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0 }}
+                className={styles.user__icon}
+              >
+                <p>John Doe</p>
+                <Avatar
+                  className={styles.user__avatar}
+                  alt="Remy Sharp"
+                  src="https://i.pravatar.cc/300"
+                />
+              </IconButton>
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
@@ -167,9 +180,14 @@ const Header = () => {
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
+                className="menuRight"
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <MenuItem
+                    className={styles.header__settings}
+                    key={setting}
+                    onClick={handleCloseUserMenu}
+                  >
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}

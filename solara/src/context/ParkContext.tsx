@@ -29,6 +29,7 @@ interface ParkContextType {
     pricePerKwh?: string;
     monthlyYield?: string;
     purchasekWH?: string;
+    sellkWh?: string;
   };
   setParkDetailsPage: React.Dispatch<
     React.SetStateAction<{
@@ -37,10 +38,13 @@ interface ParkContextType {
       pricePerKwh: string;
       monthlyYield: string;
       purchasekWH: string;
+      sellkWh: string;
     }>
   >;
   isParkDetailed: boolean;
   setIsParkDetailed: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 // Create the context
@@ -68,6 +72,7 @@ export const ParkProvider = ({ children }: ParkProviderProps) => {
   });
 
   const [isParkDetailed, setIsParkDetailed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [parkDetailsPage, setParkDetailsPage] = useState({
     seller: "",
@@ -75,6 +80,7 @@ export const ParkProvider = ({ children }: ParkProviderProps) => {
     pricePerKwh: "",
     monthlyYield: "",
     purchasekWH: "",
+    sellkWh: "",
   });
 
   return (
@@ -86,6 +92,8 @@ export const ParkProvider = ({ children }: ParkProviderProps) => {
         setParkDetailsPage,
         isParkDetailed,
         setIsParkDetailed,
+        isOpen,
+        setIsOpen,
       }}
     >
       {children}
