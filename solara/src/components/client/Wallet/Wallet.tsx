@@ -1,6 +1,9 @@
 import styles from "./Wallet.module.scss";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import AddIcon from "@mui/icons-material/Add";
+import BoltIcon from "@mui/icons-material/Bolt";
 
 const Wallet = () => {
   return (
@@ -43,55 +46,93 @@ const Wallet = () => {
         <div className={styles.wallet___bottom__left}>
           <div className={styles.wallet__bottom__left__header}>
             <h3>My credit cards</h3>
-            <span>...</span>
+            <span>
+              <MoreHorizIcon />
+            </span>
           </div>
-          <div className={styles.wallet_bottom__left__card}>
-            here goes ur card
+          <div className={styles.wallet__bottom__left__card}>
+            <div className={styles.wallet__bottom__left__card__header}>
+              <p>JOHN DOE</p>
+              <i
+                className={
+                  styles.wallet__bottom__left__card__header__mastercard__icon
+                }
+              ></i>
+            </div>
+            <div className={styles.wallet__bottom__left__card__content}>
+              $4,343<span>.97</span>
+            </div>
+            <div className={styles.wallet__bottom__left__card__bottom}>
+              <p> 7856 **** **** **** 8787</p>
+              <p>newBank</p>
+            </div>
           </div>
           <div className={styles.wallet__bottom__left__addNew}>
-            <h3>New card? +</h3>
+            <h3>New card?</h3>
+            <span>
+              <AddIcon />
+            </span>
           </div>
         </div>
-        <div className={styles.wallet___bottom__right}>
+        <div className={styles.wallet__bottom__right}>
+          <p className={styles.wallet__bottom__right__title}>
+            Last transactions
+          </p>
+
           <div className={styles.wallet__bottom__right__transaction}>
-            <p>
-              <span className={styles.wallet_bottom_right__transaction__name}>
-                SLR17
-              </span>
-            </p>
-            <p className={styles.wallet__bottom_right__transaction__amount}>
+            <div className={styles.wallet__bottom__right__transaction__name}>
+              <div>
+                <BoltIcon></BoltIcon>
+              </div>
+              <span>SLR17 kWh selled</span>
+            </div>
+            <div className={styles.wallet__bottom_right__transaction__amount}>
               - $10
-            </p>
+            </div>
           </div>
           <div className={styles.wallet__bottom__right__transaction}>
-            <p>
-              <span className={styles.wallet_bottom_right__transaction__name}>
-                SLR17
-              </span>
-            </p>
-            <p className={styles.wallet__bottom_right__transaction__amount}>
-              + $40
-            </p>
+            <div className={styles.wallet__bottom__right__transaction__name}>
+              <div>
+                <BoltIcon></BoltIcon>
+              </div>
+              <span>SLR17 kWh selled</span>
+            </div>
+            <div className={styles.wallet__bottom_right__transaction__amount}>
+              - $104
+            </div>
           </div>
           <div className={styles.wallet__bottom__right__transaction}>
-            <p>
-              <span className={styles.wallet_bottom_right__transaction__name}>
-                SLR17
-              </span>
-            </p>
-            <p className={styles.wallet__bottom_right__transaction__amount}>
-              - $10
-            </p>
+            <div className={styles.wallet__bottom__right__transaction__name}>
+              <div>
+                <BoltIcon></BoltIcon>
+              </div>
+              <span>SLR17 kWh selled</span>
+            </div>
+            <div className={styles.wallet__bottom_right__transaction__amount}>
+              + $250.4
+            </div>
           </div>
           <div className={styles.wallet__bottom__right__transaction}>
-            <p>
-              <span className={styles.wallet_bottom_right__transaction__name}>
-                SLR13
-              </span>
-            </p>
-            <p className={styles.wallet__bottom_right__transaction__amount}>
-              + $20
-            </p>
+            <div className={styles.wallet__bottom__right__transaction__name}>
+              <div>
+                <BoltIcon></BoltIcon>
+              </div>
+              <span>SLR17 kWh selled</span>
+            </div>
+            <div className={styles.wallet__bottom_right__transaction__amount}>
+              + $1000
+            </div>
+          </div>
+          <div className={styles.wallet__bottom__right__transaction}>
+            <div className={styles.wallet__bottom__right__transaction__name}>
+              <div>
+                <BoltIcon></BoltIcon>
+              </div>
+              <span>SLR17 kWh selled</span>
+            </div>
+            <div className={styles.wallet__bottom_right__transaction__amount}>
+              + $1000
+            </div>
           </div>
         </div>
       </div>

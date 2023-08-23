@@ -48,6 +48,9 @@ const Header = () => {
     router.push("/client/dashboard");
   };
 
+  const handleOnClickUser = () => {
+    router.push("/client/account");
+  };
   return (
     <AppBar position="static" className={styles.header}>
       <main className="main">
@@ -140,7 +143,7 @@ const Header = () => {
                 <div onClick={handleOnClickDashboard}>
                   <GridViewIcon></GridViewIcon>
                 </div>
-                <div>
+                <div onClick={handleOnClickUser}>
                   <PersonIcon></PersonIcon>
                 </div>
                 <div onClick={handleOnClickWallet}>

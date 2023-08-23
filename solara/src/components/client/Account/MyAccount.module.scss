@@ -1,0 +1,116 @@
+.myAccount {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 100px;
+
+  &__headerBox {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #546d6d;
+
+    button {
+      color: gray !important;
+      padding: 5px 30px;
+      background-color: transparent;
+      outline-color: none;
+      border: 1px solid gray;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        color: white !important;
+        border-color: white;
+      }
+    }
+
+    h1 {
+      font-weight: 100;
+      font-size: 30px;
+    }
+  }
+
+  &__section {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+
+    &__account>div {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 30px;
+    }
+
+    &__name {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    &__email {
+      font-size: 15px;
+      color: lightgray;
+    }
+  }
+
+  &__right {
+    h2 {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    &__details {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__details>div {
+      flex: 40%;
+    }
+  }
+
+  &__card {
+    padding: 40px;
+    border: 1px solid #546d6d;
+    ;
+    border-radius: 10px;
+    margin: 20px;
+    background-blend-mode: hard-light;
+    display: flex;
+    justify-content: space-between;
+
+    &:first-child,
+    &:nth-of-type(3) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      margin-right: 0;
+    }
+
+    &__details {
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 15px;
+        color: lightgray;
+      }
+    }
+
+    &__icon {
+      svg {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+}

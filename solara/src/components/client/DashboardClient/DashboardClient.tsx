@@ -4,7 +4,6 @@ import News from "../News/News";
 import ParkComponent from "../Park/Park";
 import ParkBox from "../Park/ParkBox";
 import Portfolio from "../Portfolio/Portfolio";
-import SimpleAreaChart from "../SimpleAreaChart";
 import styles from "./DashboardClient.module.scss";
 
 const DashboardClient = () => {

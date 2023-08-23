@@ -1,7 +1,169 @@
 .wallet {
+  margin: 0 auto;
+  width: 50%;
+
   h1 {
-    border-bottom: 1px solid aqua;
-    display: inline;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-around;
+
+    &__left {
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+
+        h3 {
+          font-size: 18px;
+        }
+
+        span {
+          svg {
+            background-color: #868686;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__card {
+        height: 170px;
+        width: 300px;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 20px;
+        background-image: linear-gradient(to right, #3a4c5d, #52a068);
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+
+          &__mastercard__icon {
+            display: inline-block;
+            height: 1em;
+            isolation: isolate;
+            position: relative;
+            line-height: 1em;
+            vertical-align: middle;
+            width: 1.611em;
+
+            &::before,
+            &::after {
+              border-radius: .5em;
+              content: "";
+              display: inline-block;
+              height: 1em;
+              position: absolute;
+              width: 1em;
+            }
+
+            &::before {
+              background-color: #eb001b;
+              left: 0;
+              top: 0;
+            }
+
+            &::after {
+              background-color: #f79e1b;
+              mix-blend-mode: hard-light;
+              right: 0;
+              top: 0;
+            }
+          }
+        }
+
+        &__content {
+          font-size: 40px;
+          margin: 20px 0;
+
+          span {
+            opacity: .6;
+          }
+        }
+
+        &__bottom {
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &__addNew {
+        padding: 10px;
+        border: 2px dotted white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+        h3 {
+          font-size: 15px;
+        }
+
+        span {
+          background-image: linear-gradient(to right, #3a4c5d, #52a068);
+          border-radius: 3px;
+          padding: 1px 5px;
+
+          svg {
+            width: 17px;
+            height: 15px;
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: block;
+      max-width: 400px;
+      width: 100%;
+
+      &__title {
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      &__transaction {
+        display: flex;
+        justify-content: space-between;
+
+        &__name {
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+
+          div {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 5px;
+            margin-right: 10px;
+          }
+
+          svg {
+            margin-left: 4px;
+            margin-top: 3px;
+
+            path {
+              color: #3cb765;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -9,12 +171,12 @@
   display: flex;
   justify-content: space-around;
   padding: 30px;
-  border: 2px solid white;
+  border: 2px solid #546d6d;
   border-radius: 40px;
-  max-width: 600px;
+  max-width: 850px;
   align-self: center;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
 
   &__left {
 
@@ -91,5 +253,6 @@
       }
     }
   }
+
 
 }
