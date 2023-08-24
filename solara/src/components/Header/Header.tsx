@@ -51,6 +51,10 @@ const Header = () => {
   const handleOnClickUser = () => {
     router.push("/client/account");
   };
+
+  const handleOnClickSettings = () => {
+    router.push("/client/settings");
+  };
   return (
     <AppBar position="static" className={styles.header}>
       <main className="main">
@@ -149,7 +153,7 @@ const Header = () => {
                 <div onClick={handleOnClickWallet}>
                   <WalletIcon></WalletIcon>
                 </div>
-                <div>
+                <div onClick={handleOnClickSettings}>
                   <SettingsIcon></SettingsIcon>
                 </div>
               </div>

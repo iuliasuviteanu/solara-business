@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parks",
+  "info": {
+    "singularName": "park",
+    "pluralName": "parks",
+    "displayName": "Park"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seller": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "pricePerKwh": {
+      "type": "string"
+    },
+    "priceTotal": {
+      "type": "string"
+    },
+    "monthlyYield": {
+      "type": "string"
+    }
+  }
+}

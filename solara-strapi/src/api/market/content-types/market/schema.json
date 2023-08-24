@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "markets",
+  "info": {
+    "singularName": "market",
+    "pluralName": "markets",
+    "displayName": "Markets",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "park": {
+      "type": "string",
+      "default": "SLR17L",
+      "unique": false
+    },
+    "kwhDuration": {
+      "type": "string",
+      "default": "9y11m"
+    },
+    "yearlyYield": {
+      "type": "string"
+    },
+    "kwhAvailable": {
+      "type": "integer"
+    }
+  }
+}

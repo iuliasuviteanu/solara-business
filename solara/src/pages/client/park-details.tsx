@@ -2,12 +2,36 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import ParkBox from "@/components/client/Park/ParkBox";
 import ParkDetails from "@/components/client/Park/ParkDetails/ParkDetails";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ParkDetailsPage = () => {
+  const [park, setPark] = useState([]);
+
+  const parks = axios.create({
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPI_URL}/parks`,
+  });
+
+  useEffect(() => {
+    parks.get("/").then((response) => {
+      setPark(response.data.data);
+    });
+  }, []);
   return (
     <div>
       <Header />
       <ParkDetails>
+        {/* {park.map((item: any) => (
+          <ParkBox
+            parkName={item.attributes.seller}
+            amount={item.attributes.amount}
+            yearlyYield={item.attributes.pricePerKwh}
+            kwhAvailable={item.attributes.priceTotal}
+            monthlyYield={item.attributes.monthlyYield}
+            sellNow={"SELL NOW"}
+            key={item.id}
+          />
+        ))} */}
         <ParkBox
           seller={"Andrew S."}
           amount={"3"}

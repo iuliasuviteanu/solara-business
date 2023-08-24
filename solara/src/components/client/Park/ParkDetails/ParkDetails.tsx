@@ -3,7 +3,6 @@ import styles from "../Park.module.scss";
 import Image from "next/image";
 import FilePresentIcon from "@mui/icons-material/FilePresent";
 import SimpleAreaChart from "../../SimpleAreaChart";
-
 interface ParkProps {
   children: any;
 }

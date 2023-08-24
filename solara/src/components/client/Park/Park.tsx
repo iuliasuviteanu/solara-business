@@ -1,5 +1,7 @@
 import styles from "./Park.module.scss";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import axios from "axios";
+import { useEffect } from "react";
 interface ParkProps {
   title: string;
   children: any;
