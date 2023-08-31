@@ -44,7 +44,7 @@ const SignIn = () => {
                 label="Username"
                 fullWidth
                 required
-                value={username}
+                defaultValue={username}
                 onChange={(e) => setUsername(e.target.value)}
                 margin="normal"
                 variant="outlined"
@@ -56,7 +56,7 @@ const SignIn = () => {
                 type="password"
                 fullWidth
                 required
-                value={password}
+                defaultValue={password}
                 onChange={(e) => setPassword(e.target.value)}
                 margin="normal"
                 variant="outlined"

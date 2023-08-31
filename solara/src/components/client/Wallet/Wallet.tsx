@@ -4,8 +4,12 @@ import SouthEastIcon from "@mui/icons-material/SouthEast";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AddIcon from "@mui/icons-material/Add";
 import BoltIcon from "@mui/icons-material/Bolt";
+import router from "next/router";
 
 const Wallet = () => {
+  const handleTransactionsList = () => {
+    router.push("/client/transactions");
+  };
   return (
     <div className={styles.wallet}>
       <h1>My wallet</h1>
@@ -75,9 +79,14 @@ const Wallet = () => {
           </div>
         </div>
         <div className={styles.wallet__bottom__right}>
-          <p className={styles.wallet__bottom__right__title}>
-            Last transactions
-          </p>
+          <div className={styles.wallet__bottom__right__list}>
+            <p className={styles.wallet__bottom__right__title}>
+              Last transactions
+            </p>
+            <span onClick={handleTransactionsList}>
+              <MoreHorizIcon />
+            </span>
+          </div>
 
           <div className={styles.wallet__bottom__right__transaction}>
             <div className={styles.wallet__bottom__right__transaction__name}>

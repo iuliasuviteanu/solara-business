@@ -11,10 +11,10 @@ const DashboardClient = () => {
   const [parkDetails, setParkDetails] = useState([]);
 
   const marketParks = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPI_URL}/markets`,
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/markets`,
   });
   async function fetchData() {
-    marketParks.get("/").then((response) => {
+    await marketParks.get("/").then((response) => {
       setParkDetails(response.data.data);
     });
   }

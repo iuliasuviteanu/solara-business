@@ -11,7 +11,7 @@ const MyAccount = () => {
     router.push("/login");
   };
   return (
-    <div className={styles.myAccount}>
+    <main className={(styles.myAccount, "userAccount")}>
       <div className={styles.myAccount__headerBox}>
         <h1>MY ACCOUNT</h1>
         <button onClick={handleOnClick}>sign out</button>
@@ -58,7 +58,7 @@ const MyAccount = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

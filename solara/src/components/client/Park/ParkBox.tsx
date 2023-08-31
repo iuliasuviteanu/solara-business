@@ -56,7 +56,6 @@ const ParkBox = ({
   const handleSellNowOnClick = () => {
     setShowDialog(true);
     setIsOpen(true);
-    console.log("isope", isOpen);
   };
 
   const dashboardParkDetails = (

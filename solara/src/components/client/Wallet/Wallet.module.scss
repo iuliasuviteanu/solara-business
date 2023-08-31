@@ -131,6 +131,20 @@
       max-width: 400px;
       width: 100%;
 
+      &__list {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+
+          svg {
+            background-color: #868686;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+
       &__title {
         font-weight: 400;
         margin-bottom: 30px;
@@ -191,6 +205,8 @@
   }
 
   &__right {
+
+
     &__box {
       &:last-child {
         p {
@@ -252,6 +268,8 @@
         }
       }
     }
+
+
   }
 
 

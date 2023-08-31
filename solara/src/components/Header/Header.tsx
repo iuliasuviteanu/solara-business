@@ -147,8 +147,8 @@ const Header = () => {
                 <div onClick={handleOnClickDashboard}>
                   <GridViewIcon></GridViewIcon>
                 </div>
-                <div onClick={handleOnClickUser}>
-                  <PersonIcon></PersonIcon>
+                <div>
+                  <PersonIcon onClick={handleOnClickUser}></PersonIcon>
                 </div>
                 <div onClick={handleOnClickWallet}>
                   <WalletIcon></WalletIcon>
@@ -171,34 +171,8 @@ const Header = () => {
                   alt="Remy Sharp"
                   src="https://i.pravatar.cc/300"
                 />
+                <button className={styles.user__button}>SIGN OUT</button>
               </IconButton>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-                className="menuRight"
-              >
-                {settings.map((setting) => (
-                  <MenuItem
-                    className={styles.header__settings}
-                    key={setting}
-                    onClick={handleCloseUserMenu}
-                  >
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
             </Box>
           </Toolbar>
         </Container>
