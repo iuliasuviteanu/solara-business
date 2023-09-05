@@ -1,8 +1,6 @@
-import { Stack } from "@mui/system";
 import SimpleAreaChart from "../SimpleAreaChart";
 import TransactionList from "./TransactionList";
 import styles from "./Transactions.module.scss";
-import Pagination from "@mui/material/Pagination";
 
 const Transactions = () => {
   return (
@@ -40,9 +38,9 @@ const Transactions = () => {
             downloadButton={true}
             transactionPrice={"-10$"}
           />
-          <Stack spacing={2} className={styles.transactions__pagination}>
-            <Pagination count={10} />
-          </Stack>
+        </div>
+        <div className={styles.transactions__loadMore}>
+          <button>Load more...</button>
         </div>
       </div>
       <div className={styles.transactions__graphic}>
