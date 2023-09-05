@@ -1,8 +1,8 @@
-import styles from "./SignIn.module.scss";
 import { Button, Container, Paper, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
+import styles from "./SignIn.module.scss";
 
 const SignIn = () => {
   const router = useRouter();
