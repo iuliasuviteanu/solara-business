@@ -1,7 +1,7 @@
-import Footer from "components/Footer/Footer";
-import Header from "components/Header/Header";
-import ParkBox from "components/client/Park/ParkBox";
-import ParkDetails from "components/client/Park/ParkDetails/ParkDetails";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import ParkBox from "@/components/client/Park/ParkBox";
+import ParkDetails from "@/components/client/Park/ParkDetails/ParkDetails";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

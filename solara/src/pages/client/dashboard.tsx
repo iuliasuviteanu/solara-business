@@ -1,5 +1,5 @@
-import Footer from "components/Footer/Footer";
-import DashboardClient from "components/client/DashboardClient/DashboardClient";
+import Footer from "@/components/Footer/Footer";
+import DashboardClient from "@/components/client/DashboardClient/DashboardClient";
 
 const DashboardClientPage = () => {
   return (

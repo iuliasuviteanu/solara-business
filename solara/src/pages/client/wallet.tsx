@@ -1,6 +1,6 @@
-import Wallet from "components/client/Wallet/Wallet";
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
+import Wallet from "@/components/client/Wallet/Wallet";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const WalletPage = () => {
   return (
