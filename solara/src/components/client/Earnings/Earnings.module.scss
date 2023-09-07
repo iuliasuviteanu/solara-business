@@ -1,6 +1,10 @@
 .earnings {
   margin: 0 20px;
 
+  @media(max-width: 998px) {
+    margin: 20px 0;
+  }
+
   h2 {
     margin-bottom: 30px;
     font-weight: 400;
@@ -15,6 +19,7 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
+
 
       p {
         color: #7F8082;
@@ -37,5 +42,9 @@
     position: absolute;
     top: -50%;
     right: 0;
+
+    @media(max-width: 998px) {
+      display: none;
+    }
   }
 }

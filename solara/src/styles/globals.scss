@@ -39,6 +39,14 @@ body {
 
 .main {
   padding: 0 50px;
+
+  @media(max-width: 998px) {
+    padding: 0 25px;
+  }
+
+  @media(max-width: 768px) {
+    padding: 0 15px;
+  }
 }
 
 div:first-child {
@@ -136,23 +144,19 @@ div:first-child {
   width: 70%;
   margin: 0 auto;
   margin-top: 100px;
-}
 
-button {
+  @media(max-width: 1366px) {
+    width: 100%;
+    padding: 10px;
+  }
 
-  color: gray;
-  padding: 5px 30px;
-  background-color: transparent;
-  outline-color: none;
-  border: 1px solid gray;
-  border-radius: 5px;
-
-  &:hover {
-    cursor: pointer;
-    color: white;
-    border-color: white;
+  @media(max-width: 1024px) {
+    width: 100%;
+    margin-top: 50px;
   }
 }
+
+
 
 .transactionsList {
   margin: 20px 0;

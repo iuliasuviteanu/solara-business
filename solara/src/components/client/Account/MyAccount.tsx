@@ -14,7 +14,6 @@ const MyAccount = () => {
     <main className={(styles.myAccount, "userAccount")}>
       <div className={styles.myAccount__headerBox}>
         <h1>MY ACCOUNT</h1>
-        <button onClick={handleOnClick}>sign out</button>
       </div>
       <div className={styles.myAccount__section}>
         <div className={styles.myAccount__left}>

@@ -8,18 +8,31 @@ import Portfolio from "../Portfolio/Portfolio";
 import styles from "./DashboardClient.module.scss";
 import axios from "axios";
 const DashboardClient = () => {
-  const [parkDetails, setParkDetails] = useState([]);
+  const [availableSlr, setAvailableSlr] = useState([]);
+  const [freeMrk, setFreeMrk] = useState([]);
 
-  const marketParks = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/markets`,
+  const availableSolaras = axios.create({
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/available-solaras`,
   });
-  async function fetchData() {
-    await marketParks.get("/").then((response) => {
-      setParkDetails(response.data.data);
+
+  const freeMarkets = axios.create({
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/free-markets`,
+  });
+
+  async function fetchDataSolara() {
+    await availableSolaras.get("/").then((response) => {
+      setAvailableSlr(response.data.data);
+    });
+  }
+
+  async function fetchDataMarket() {
+    await freeMarkets.get("/").then((response) => {
+      setFreeMrk(response.data.data);
     });
   }
   useEffect(() => {
-    fetchData();
+    fetchDataSolara();
+    fetchDataMarket();
   }, []);
 
   return (
@@ -32,7 +45,7 @@ const DashboardClient = () => {
           <News></News>
         </div>
         <ParkComponent title={"Available Solara kWh"}>
-          {parkDetails.map((item: any) => (
+          {availableSlr.map((item: any) => (
             <ParkBox
               parkName={item.attributes.park}
               kwhDuration={item.attributes.kwhDuration}
@@ -44,7 +57,7 @@ const DashboardClient = () => {
           ))}
         </ParkComponent>
         <ParkComponent title={"Free Market kWh"}>
-          {parkDetails.map((item: any) => (
+          {freeMrk.map((item: any) => (
             <ParkBox
               parkName={item.attributes.park}
               kwhDuration={item.attributes.kwhDuration}

@@ -15,6 +15,7 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -60,14 +61,17 @@ const Header = () => {
       <main className="main">
         <Container className={styles.header__container}>
           <Toolbar disableGutters>
+            <HamburgerMenu />
+
             <Typography
+              className={styles.header__logocontainer}
               variant="h6"
               noWrap
               component="a"
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { md: "flex" },
                 fontWeight: 700,
                 color: "inherit",
                 textDecoration: "none",
@@ -86,7 +90,7 @@ const Header = () => {
             <Box
               sx={{
                 flexGrow: 1,
-                display: { xs: "none", md: "flex" },
+                display: { md: "flex" },
                 justifyContent: "center",
               }}
             >

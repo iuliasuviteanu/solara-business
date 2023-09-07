@@ -21,6 +21,9 @@ const ParkDetailsPage = () => {
     fetchData();
   }, []);
 
+  {
+    park.map((item: any) => console.log(item.attributes.seller));
+  }
   return (
     <div>
       <Header />

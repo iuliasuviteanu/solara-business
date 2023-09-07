@@ -26,7 +26,6 @@ const Earnings = () => {
                 height={170}
                 alt="Graphic Picture"
               />
-              {/* <SimpleAreaChart /> */}
             </div>
           </div>
         </main>

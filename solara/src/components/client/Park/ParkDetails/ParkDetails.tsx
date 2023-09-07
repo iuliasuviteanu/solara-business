@@ -3,12 +3,32 @@ import styles from "../Park.module.scss";
 import Image from "next/image";
 import FilePresentIcon from "@mui/icons-material/FilePresent";
 import SimpleAreaChart from "../../SimpleAreaChart";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ParkBox from "../ParkBox";
 interface ParkProps {
   children: any;
 }
 const ParkDetails = ({ children }: ParkProps) => {
   const { parkDetails } = useParkContext();
+  const [park, setPark] = useState([]);
 
+  const parks = axios.create({
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/parks`,
+  });
+
+  async function fetchData() {
+    await parks.get("/").then((response) => {
+      setPark(response.data.data);
+    });
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  {
+    park.map((item: any) => console.log(item.attributes.seller));
+  }
   return (
     <main className="main">
       <div className={(styles.park__section, styles.park__details)}>
@@ -87,7 +107,18 @@ const ParkDetails = ({ children }: ParkProps) => {
               <p>monthly yield</p>
               <p>purchase kwh</p>
             </div>
-            <div className={styles.park__box}>{children}</div>
+            <ParkDetails>
+              {park.map((item: any) => (
+                <ParkBox
+                  seller={item.attributes.seller}
+                  amount={item.attributes.amount}
+                  pricePerKwh={item.attributes.pricePerKwh}
+                  priceTotal={item.attributes.priceTotal}
+                  monthlyYield={item.attributes.monthlyYield}
+                  key={item.id}
+                />
+              ))}
+            </ParkDetails>
           </div>
         </div>
       </div>
