@@ -1,0 +1,78 @@
+.dashboard {
+  margin-top: 70px;
+
+  &__hero {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 500px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-weight: 200;
+    }
+  }
+
+  &__portfolio {
+    padding: 30px;
+    border: 1px solid #3b4c3b;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 4px;
+
+    &__text {
+      width: 40%;
+
+      span {
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        margin: 10px 0;
+      }
+
+      h3 {
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 1.3;
+      }
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        padding: 40px;
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #16859c, #14803d) 1 3%;
+        margin-right: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      &__details {
+        span {
+          letter-spacing: 3px;
+          font-size: 12px;
+        }
+
+        h2 {
+          margin: 10px 0;
+        }
+      }
+
+    }
+  }
+}

@@ -17,7 +17,7 @@ const SignIn = () => {
       router.push("/client/dashboard");
     } else if (username === "park" && password === "park") {
       console.log("Park Sign In Successful");
-      router.push("/dashboard-park");
+      router.push("/park/dashboard");
     } else if (username === "admin" && password === "admin") {
       console.log("Admin Sign In Successful");
       router.push("/dashboard-admin");
