@@ -32,18 +32,6 @@ const Wallet = () => {
               + 10,2 %
             </p>
           </div>
-          <div className={styles.balance__right__box}>
-            <h3>
-              Spendings / <span>month</span>
-            </h3>
-            <h2> $ 2000</h2>
-            <p>
-              <span>
-                <SouthEastIcon />
-              </span>
-              - 5 %
-            </p>
-          </div>
         </div>
       </div>
       <div className={styles.wallet__bottom}>

@@ -7,32 +7,14 @@ import ParkBox from "../Park/ParkBox";
 import Portfolio from "../Portfolio/Portfolio";
 import styles from "./DashboardClient.module.scss";
 import axios from "axios";
+import { JsonData } from "../Park/ParkDetails/types";
 const DashboardClient = () => {
-  const [availableSlr, setAvailableSlr] = useState([]);
-  const [freeMrk, setFreeMrk] = useState([]);
+  const [market, setMarket] = useState<JsonData | null>(null);
 
-  const availableSolaras = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/available-solaras`,
-  });
-
-  const freeMarkets = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/free-markets`,
-  });
-
-  async function fetchDataSolara() {
-    await availableSolaras.get("/").then((response) => {
-      setAvailableSlr(response.data.data);
-    });
-  }
-
-  async function fetchDataMarket() {
-    await freeMarkets.get("/").then((response) => {
-      setFreeMrk(response.data.data);
-    });
-  }
   useEffect(() => {
-    fetchDataSolara();
-    fetchDataMarket();
+    fetch("/json/data.json") // Use the relative path to your JSON file
+      .then((response) => response.json())
+      .then((jsonData) => setMarket(jsonData));
   }, []);
 
   return (
@@ -45,24 +27,24 @@ const DashboardClient = () => {
           <News></News>
         </div>
         <ParkComponent title={"Available Solara kWh"}>
-          {availableSlr.map((item: any) => (
+          {market?.availableSolaras.map((item: any) => (
             <ParkBox
-              parkName={item.attributes.park}
-              kwhDuration={item.attributes.kwhDuration}
-              yearlyYield={item.attributes.yearlyYield}
-              kwhAvailable={item.attributes.kwhAvailable}
-              buyNow={"BUY NOW"}
+              parkName={item.park}
+              kwhDuration={item.kwhDuration}
+              yearlyYield={item.yearlyYield}
+              kwhAvailable={item.kwhAvailable}
+              buyNow="BUY NOW"
               key={item.id}
             />
           ))}
         </ParkComponent>
         <ParkComponent title={"Free Market kWh"}>
-          {freeMrk.map((item: any) => (
+          {market?.freeMarket.map((item: any) => (
             <ParkBox
-              parkName={item.attributes.park}
-              kwhDuration={item.attributes.kwhDuration}
-              yearlyYield={item.attributes.yearlyYield}
-              kwhAvailable={item.attributes.kwhAvailable}
+              parkName={item.park}
+              kwhDuration={item.kwhDuration}
+              yearlyYield={item.yearlyYield}
+              kwhAvailable={item.kwhAvailable}
               buyNow={"BUY NOW"}
               key={item.id}
             />

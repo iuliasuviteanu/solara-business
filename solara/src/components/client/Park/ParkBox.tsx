@@ -43,7 +43,6 @@ const ParkBox = ({
   const [showDialog, setShowDialog] = useState(false);
 
   const handleBuyNowOnClick = () => {
-    router.push("/client/park-details");
     setParkDetails({
       parkName: parkName || "",
       kwhDuration: kwhDuration || "",
@@ -51,6 +50,7 @@ const ParkBox = ({
       yearlyYield: yearlyYield || "",
     });
     setIsParkDetailed(!isParkDetailed);
+    router.push("/client/park-details");
   };
 
   const handleSellNowOnClick = () => {

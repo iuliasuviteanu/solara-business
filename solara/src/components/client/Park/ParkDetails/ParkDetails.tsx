@@ -6,29 +6,20 @@ import SimpleAreaChart from "../../SimpleAreaChart";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ParkBox from "../ParkBox";
+import { JsonData } from "./types";
 interface ParkProps {
   children: any;
 }
 const ParkDetails = ({ children }: ParkProps) => {
   const { parkDetails } = useParkContext();
-  const [park, setPark] = useState([]);
+  const [data, setData] = useState<JsonData | null>(null);
 
-  const parks = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPIHOST}/parks`,
-  });
-
-  async function fetchData() {
-    await parks.get("/").then((response) => {
-      setPark(response.data.data);
-    });
-  }
   useEffect(() => {
-    fetchData();
+    fetch("/json/data.json") // Use the relative path to your JSON file
+      .then((response) => response.json())
+      .then((jsonData) => setData(jsonData));
   }, []);
 
-  {
-    park.map((item: any) => console.log(item.attributes.seller));
-  }
   return (
     <main className="main">
       <div className={(styles.park__section, styles.park__details)}>
@@ -107,23 +98,20 @@ const ParkDetails = ({ children }: ParkProps) => {
               <p>monthly yield</p>
               <p>purchase kwh</p>
             </div>
-            <ParkDetails>
-              {park.map((item: any) => (
-                <ParkBox
-                  seller={item.attributes.seller}
-                  amount={item.attributes.amount}
-                  pricePerKwh={item.attributes.pricePerKwh}
-                  priceTotal={item.attributes.priceTotal}
-                  monthlyYield={item.attributes.monthlyYield}
-                  key={item.id}
-                />
-              ))}
-            </ParkDetails>
+            {data?.parkDetails.map((item: any) => (
+              <ParkBox
+                seller={item.seller}
+                amount={item.amount}
+                pricePerKwh={item.pricePerKwh}
+                priceTotal={item.priceTotal}
+                monthlyYield={item.monthlyYield}
+                key={item.id}
+              />
+            ))}
           </div>
         </div>
       </div>
       <SimpleAreaChart />
-      {/* <SimpleAreaChart /> */}
     </main>
   );
 };

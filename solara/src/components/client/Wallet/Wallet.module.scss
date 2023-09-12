@@ -252,25 +252,10 @@
   }
 
   &__right {
+    display: flex;
+    align-items: center;
+
     &__box {
-      &:last-child {
-        p {
-          color: red;
-          border: 1px solid red;
-
-          span {
-            border: 1px solid red;
-
-          }
-
-          svg {
-
-            path {
-              color: red;
-            }
-          }
-        }
-      }
 
       margin-bottom: 30px;
 
@@ -283,8 +268,7 @@
       }
 
       h2 {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin: 15px 0;
         font-size: 20px;
       }
 

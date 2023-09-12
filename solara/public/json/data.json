@@ -1,0 +1,103 @@
+{
+  "parkDetails": [
+    {
+      "id": 1,
+      "seller": "Andrew S.",
+      "monthlyYield": "60.9$",
+      "pricePerKwh": "900$",
+      "priceTotal": "2700$",
+      "amount": "3"
+    },
+    {
+      "id": 2,
+      "amount": "1",
+      "monthlyYield": "20.3$",
+      "pricePerKwh": "800$",
+      "priceTotal": "800$",
+      "seller": "silviu R."
+    },
+    {
+      "id": 3,
+      "amount": "3",
+      "monthlyYield": "60.9$",
+      "pricePerKwh": "883$",
+      "priceTotal": "2650$",
+      "seller": "Ionut P."
+    },
+    {
+      "id": 4,
+      "amount": "3",
+      "monthlyYield": "60.9$",
+      "pricePerKwh": "966$",
+      "priceTotal": "2900$",
+      "seller": "Mihnea G."
+    }
+  ],
+  "freeMarket": [
+    {
+      "id": 1,
+      "kwhAvailable": "31",
+      "kwhDuration": "21y4m",
+      "park": "SLRN12NL",
+      "yearlyYield": "10.5%"
+    },
+    {
+      "id": 2,
+      "kwhAvailable": "14",
+      "kwhDuration": "3y1m",
+      "park": "SLR3L",
+      "yearlyYield": "16%"
+    },
+    {
+      "id": 3,
+      "kwhAvailable": "22",
+      "kwhDuration": "18y8m",
+      "park": "SLR4NL",
+      "yearlyYield": "9%"
+    },
+    {
+      "id": 4,
+      "kwhAvailable": "5",
+      "kwhDuration": "4y6m",
+      "park": "SLR10L",
+      "yearlyYield": "18%"
+    },
+    {
+      "id": 5,
+      "kwhAvailable": "11",
+      "kwhDuration": "7y4m",
+      "park": "SLR7L",
+      "yearlyYield": "17%"
+    }
+  ],
+  "availableSolaras": [
+    {
+      "id": 1,
+      "kwhAvailable": "9y11m",
+      "kwhDuration": "17%",
+      "park": "SLR17L",
+      "yearlyYield": "173"
+    },
+    {
+      "id": 2,
+      "kwhAvailable": "24y12m",
+      "kwhDuration": "11%",
+      "park": "SLR13NL",
+      "yearlyYield": "51"
+    },
+    {
+      "id": 3,
+      "kwhAvailable": "6y11m",
+      "kwhDuration": "18%",
+      "park": "SLR17L",
+      "yearlyYield": "49"
+    },
+    {
+      "id": 3,
+      "kwhAvailable": "4y11m",
+      "kwhDuration": "17.5%",
+      "park": "SLR17L",
+      "yearlyYield": "13"
+    }
+  ]
+}
