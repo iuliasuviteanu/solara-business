@@ -1,0 +1,12 @@
+.cryptocompare-logo>img:nth-child(2),
+.powered-by-cryptocompare {
+  display: none;
+}
+
+#marketsContainerUSD {
+  display: none;
+}
+
+.ccc-widget.ccc-chart-v3 div div#marketsContainerUSD.tabcontent {
+  display: none !important;
+}

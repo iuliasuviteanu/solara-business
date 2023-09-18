@@ -161,3 +161,42 @@ div:first-child {
 .transactionsList {
   margin: 20px 0;
 }
+
+
+.ccc-widget {
+  background: linear-gradient(to right, #071113, #182B39);
+  padding: 10px;
+
+  &:nth-of-type(2) {
+    display: none;
+  }
+
+  * {
+    background: linear-gradient(to right, #071113, #182B39) !important;
+  }
+
+  div {
+    background: linear-gradient(to right, #071113, #182B39) !important;
+  }
+
+  a {
+    background: linear-gradient(to right, #071113, #182B39) !important;
+  }
+
+  .tabContainer {
+    img {
+      display: none;
+    }
+  }
+
+  text {
+    fill: white;
+  }
+
+  .amcharts-category-axis {
+    path {
+      color: white !important;
+
+    }
+  }
+}

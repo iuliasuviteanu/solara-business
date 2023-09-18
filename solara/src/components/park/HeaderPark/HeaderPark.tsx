@@ -7,20 +7,16 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import GridViewIcon from "@mui/icons-material/GridView";
-import PersonIcon from "@mui/icons-material/Person";
-import WalletIcon from "@mui/icons-material/Wallet";
-import SettingsIcon from "@mui/icons-material/Settings";
 import Image from "next/image";
 import styles from "../../Header/Header.module.scss";
+import styless from "./HeaderPark.module.scss";
 const HeaderPark = () => {
-  const handleOnClickDashboard = () => {};
-  const handleOnClickPark = () => {};
-  const handleOnClickWallet = () => {};
-  const handleOnClickSettings = () => {};
   return (
     <>
-      <AppBar position="static" className={styles.header}>
+      <AppBar
+        position="static"
+        className={`${styles.header} ${styless.headerPark}`}
+      >
         <main className="main">
           <Container className={styles.header__container}>
             <Toolbar disableGutters>
@@ -49,28 +45,6 @@ const HeaderPark = () => {
                 </p>
               </Typography>
 
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: { md: "flex" },
-                  justifyContent: "center",
-                }}
-              >
-                <div className={styles.navIcons}>
-                  <div onClick={handleOnClickDashboard}>
-                    <GridViewIcon></GridViewIcon>
-                  </div>
-                  <div>
-                    <PersonIcon onClick={handleOnClickPark}></PersonIcon>
-                  </div>
-                  <div onClick={handleOnClickWallet}>
-                    <WalletIcon></WalletIcon>
-                  </div>
-                  <div onClick={handleOnClickSettings}>
-                    <SettingsIcon></SettingsIcon>
-                  </div>
-                </div>
-              </Box>
               <Box sx={{ flexGrow: 0 }} className={styles.user}>
                 <IconButton sx={{ p: 0 }} className={styles.user__icon}>
                   <p>Solara Park</p>

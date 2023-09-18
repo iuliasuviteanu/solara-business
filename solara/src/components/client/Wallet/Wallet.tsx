@@ -5,10 +5,20 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AddIcon from "@mui/icons-material/Add";
 import BoltIcon from "@mui/icons-material/Bolt";
 import router from "next/router";
+import { useState } from "react";
+import { useParkContext } from "@/context/ParkContext";
+import Withdraw from "@/components/Withdraw/Withdraw";
 
 const Wallet = () => {
+  const [showDialog, setShowDialog] = useState(false);
+  const { setIsOpen } = useParkContext();
+
   const handleTransactionsList = () => {
     router.push("/client/transactions");
+  };
+  const handleOnClickWithdraw = () => {
+    setShowDialog(true);
+    setIsOpen(true);
   };
   return (
     <div className={styles.wallet}>
@@ -32,6 +42,10 @@ const Wallet = () => {
               + 10,2 %
             </p>
           </div>
+          <div className={styles.balance__right__withdraw}>
+            <button onClick={handleOnClickWithdraw}>Withdraw</button>
+          </div>
+          {showDialog ? <Withdraw /> : null}
         </div>
       </div>
       <div className={styles.wallet__bottom}>

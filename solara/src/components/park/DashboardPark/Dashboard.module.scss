@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-around;
     border-radius: 4px;
+    margin-bottom: 50px;
 
     &__text {
       width: 40%;
@@ -74,5 +75,52 @@
       }
 
     }
+  }
+
+
+
+  &__tabs {
+    margin-top: 100px;
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #3b4c3b;
+    }
+
+    &__wrapper {
+      margin-top: 30px;
+      display: flex;
+
+      &__box {
+        color: gray;
+        padding: 5px 10px;
+        background-color: transparent;
+        outline-color: none;
+        border: 1px solid gray;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+          border-color: white;
+        }
+
+        &:focus,
+        &:active {
+          background-color: #3b4c3b;
+          border-color: white;
+        }
+      }
+    }
+  }
+
+  .activeTab {
+    background-color: #3b4c3b;
+    color: white;
   }
 }
