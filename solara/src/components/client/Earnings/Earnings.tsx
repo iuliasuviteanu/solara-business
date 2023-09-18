@@ -20,12 +20,13 @@ const Earnings = () => {
               </div>
             </div>
             <div className={styles.earnings__graphic}>
-              <Image
+              <SimpleAreaChart />
+              {/* <Image
                 src="/images/solara-graphics.png"
                 width={300}
                 height={170}
                 alt="Graphic Picture"
-              />
+              /> */}
             </div>
           </div>
         </main>
