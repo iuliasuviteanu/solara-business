@@ -17,7 +17,8 @@ const loadCryptoCompareWidgetScript = () => {
   var theUrl = baseUrl + "serve/v3/coin/chart?fsym=BTC&tsyms=USD";
   s.src = theUrl + (theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
   s.id = "cryptoCompareScript"; // Set the script id
-  document.getElementById("cryptoCompareWidgetContainer").appendChild(s);
+  const element = document.getElementById("cryptoCompareWidgetContainer");
+  element?.appendChild(s);
 };
 
 const CryptoCompareWidget: React.FC = () => {
